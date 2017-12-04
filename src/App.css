@@ -1,22 +1,101 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 200px;
+    height: 150px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 300px;
-  padding: 20px;
-  color: white;
+    height: auto;
+    padding: 20px;
+    color: #222222;
 }
 
 .App-title {
-  font-size: 2.5em;
+    font-size: 2.0em;
+}
+
+.App-find-me {
+    display: inline-block;
+    width: 300px;
+}
+
+.App-find-me-logos {
+    width: 32px;
+    margin: 10px 20px;
+}
+
+.App-body {
+    width: 100%;
+    background-color: #222222;
+    padding: 50px 0;
 }
 
 .App-intro {
-  font-size: large;
+    background-color: #ffffff;
+    width: 50%;
+    margin: 40px auto;
+    border-radius: 4px;
+    color: #222222;
+}
+
+.App-projects {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 70%;
+    height: 350px;
+    margin: 40px auto;
+    border-radius: 4px;
+    color: #222222;
+    text-align: left;
+}
+
+.App-projects .App-col-left, .App-projects .App-col-right {
+    width: 50%;
+    float: left;
+    padding: 10px 0;
+}
+
+.App-projects .App-project-image {
+    width: 100%;
+    height: auto;
+}
+
+.App-intro-center {
+    text-align: center;
+}
+
+.App-intro-left {
+    text-align: left;
+}
+
+.App-project-link {
+    clear: both;
+    text-align: center;
+}
+
+.App-project-link .App-project-link-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 1024px) {
+    .App-projects {
+        height: auto;
+    }
+
+    .App-projects .App-col-left, .App-projects .App-col-right {
+        width: 100%;
+        float: none;
+    }
+
 }

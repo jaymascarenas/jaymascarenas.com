@@ -2,86 +2,34 @@ import React, {Component} from 'react';
 import logo from './images/jay.png';
 import github from './images/GitHub-Mark-32px.png';
 import linkedIn from './images/In-2C-34px-R.png';
-import connectedImage from './images/connected-magazine.jpg';
-import starImage from './images/star.jpg';
-import spendTrend from './images/spendtrend-holiday-2016.jpg';
 import './App.css';
 
-//const projects = require('./projects.js');
-
-const projects = [
-    {
-        title: "Connected Magazine",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
-        technology: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        link: "https://www.firstdata.com/en_us/about-first-data/media/connected-magazine.html",
-        image: "./images/connected-magazine.jpg"
-    },
-    {
-        title: "STAR©",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
-        technology: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        link: "https://wwww.star.com",
-        image: "./images/star.jpg"
-    },
-    {
-        title: "SpendTrend Report",
-        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
-        technology: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        link: "https://www.firstdata.com/en_us/all-features/spendtrend-holiday-2016.html",
-        image: "./images/spendtrend-holiday-2016.jpg"
-    }
-];
-
-
-let links = [
-    {endpoint: '/america'},
-    {endpoint: '/canada'},
-    {endpoint: '/norway'},
-    {endpoint: '/bahamas'}
-];
-
-class Navigation extends Component {
-
-    render() {
-        const listItems = projects.map((link) =>
-            <li key={link.title}>{link.title}</li>
-        );
-        return (
-            <div className="navigation">
-                <ul>
-                    {listItems}
-                </ul>
-            </div>
-        );
-    }
-
-}
-
+const projects = require('./projects.js');
 
 class Projects extends Component {
     render() {
-        const projectList = projects.map((project) =>
+        const projectList = projects.myProjects.map((project) =>
             <div key={project.title} className="App-projects">
-                <div className="App-col-left">
-                    <h1>{project.title}</h1>
-                    <p className="App-description">{project.description}</p>
-                    <h3>Tech used</h3>
-                    <p className="App-technology">{project.technology}</p>
-                </div>
+                <div className="App-projects-container">
+                    <div className="App-col-left">
+                        <h1>{project.title}</h1>
+                        <p className="App-description">{project.description}</p>
+                        <h3>Tech used</h3>
+                        <p className="App-technology">{project.technology}</p>
+                    </div>
 
-                <div className="App-col-right">
-                    <img src={project.image} alt={project.title} className="App-project-image"/>
+                    <div className="App-col-right">
+                        <img src={project.image} alt={project.title} className="App-project-image"/>
+                    </div>
                 </div>
-                <div className="App-project-link">
-                    <a href={project.link} className="App-project-link-button" target="_blank">Launch</a>
+                <div className="App-projects-link">
+                    <a href={project.link} className="App-projects-link-button" target="_blank">Launch</a>
                 </div>
-
             </div>
         );
         return (
             <div>
-            {projectList}
+                {projectList}
             </div>
         )
     }
@@ -93,7 +41,7 @@ class App extends Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <img src={logo} className="App-logo" alt="Jay M"/>
+                    {/*<img src={logo} className="App-logo" alt="Jay M"/>*/}
                     <h1 className="App-title">Jay Mascarenas</h1>
                     <p>Front End Web Developer</p>
                     <div className="App-find-me">
@@ -103,12 +51,7 @@ class App extends Component {
                            rel="noopener noreferrer"><img src={linkedIn} className="App-find-me-logos" alt="Linkedin"/></a>
                     </div>
                     <div className="App-intro">
-                        <p className="App-intro-center">
-                            Hi! My name is Jay and I am a professional Front End Web Developer. I love to design and
-                            develop front end experiences for great companies. I hope I can help your company grow and
-                            increase it's brand awareness.
-                        </p>
-                        <p>Please see some of my favorite work below</p>
+                        <p>Some of the work I have developed or designed.</p>
                     </div>
                 </header>
                 <section className="App-body">
@@ -116,6 +59,33 @@ class App extends Component {
                     <Projects/>
 
 
+                </section>
+                <section className="App-body-tools">
+                    <div className="App-tools">
+                        <h1 className="App-tools-title">Tools and libraries I use and work with</h1>
+                        <div className="App-tools-container">
+                            <div className="App-tools-list">
+                                <ul>
+                                    <li>HTML/CSS</li>
+                                    <li>JavaScript/jQuery</li>
+                                    <li>PHP</li>
+                                    <li>SASS/LESS</li>
+                                    <li>Gulp/Grunt/Webpack</li>
+                                    <li>React</li>
+                                    <li>GIT/SVN</li>
+                                    <li>MySQL</li>
+                                    <li>Handlebars</li>
+                                    <li>AEM Content</li>
+                                    <li>Node/Express</li>
+                                    <li>Bootstrap/Foundation</li>
+                                    <li>Photoshop</li>
+                                    <li>AJAX</li>
+                                    <li>APIs</li>
+                                    <li>Trello</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         );

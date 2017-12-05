@@ -36,30 +36,38 @@
     background-color: #ffffff;
     width: 50%;
     margin: 40px auto;
-    border-radius: 4px;
     color: #222222;
 }
 
 .App-projects {
     background-color: #ffffff;
     padding: 20px;
-    width: 70%;
-    height: 350px;
+    width: 60%;
+    height: auto;
     margin: 40px auto;
-    border-radius: 4px;
     color: #222222;
     text-align: left;
 }
 
+.App-projects-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .App-projects .App-col-left, .App-projects .App-col-right {
-    width: 50%;
+    width: 46%;
+    padding: 10px;
     float: left;
-    padding: 10px 0;
+}
+
+.App-projects .App-col-right {
+    text-align: center;
 }
 
 .App-projects .App-project-image {
     width: 100%;
-    height: auto;
 }
 
 .App-intro-center {
@@ -70,14 +78,14 @@
     text-align: left;
 }
 
-.App-project-link {
+.App-projects-link {
     clear: both;
     text-align: center;
 }
 
-.App-project-link .App-project-link-button {
+.App-projects-link .App-projects-link-button {
     background-color: #4CAF50;
-    border: none;
+    border: 1px solid #ffffff;
     color: white;
     padding: 15px;
     text-align: center;
@@ -85,12 +93,53 @@
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    border-radius: 4px;
+}
+
+.App-projects-link .App-projects-link-button:hover {
+    background-color: inherit;
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+}
+
+.App-body-tools {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.App-tools {
+    padding: 20px;
+    width: 60%;
+    height: auto;
+    margin: 40px auto;
+    color: #222222;
+    text-align: left;
+}
+
+.App-tools-title {
+    font-size: 2.0em;
+    text-align: center;
+}
+
+.App-tools-list ul {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+}
+
+.App-tools-list li {
+    font-size: 1.2em;
+    line-height: 1.8em;
+    list-style: none;
 }
 
 @media screen and (max-width: 1024px) {
     .App-projects {
         height: auto;
+        width: 80%;
+    }
+
+    .App-projects-container {
+        flex-direction: column;
     }
 
     .App-projects .App-col-left, .App-projects .App-col-right {
@@ -98,4 +147,21 @@
         float: none;
     }
 
+    .App-tools {
+        width: 80%;
+    }
+
+    .App-tools-list ul {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .App-tools-list ul {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
 }

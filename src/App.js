@@ -9,51 +9,84 @@ import './App.css';
 
 //const projects = require('./projects.js');
 
-const projects = [{
-    title: "Connected Magazine",
-    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
-    technology: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-    link: "https://www.firstdata.com/en_us/about-first-data/media/connected-magazine.html"
-},
+const projects = [
+    {
+        title: "Connected Magazine",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
+        technology: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        link: "https://www.firstdata.com/en_us/about-first-data/media/connected-magazine.html",
+        image: "./images/connected-magazine.jpg"
+    },
     {
         title: "STAR©",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
         technology: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        link: "https://wwww.star.com"
+        link: "https://wwww.star.com",
+        image: "./images/star.jpg"
     },
     {
         title: "SpendTrend Report",
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?",
         technology: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-        link: "https://www.firstdata.com/en_us/all-features/spendtrend-holiday-2016.html"
+        link: "https://www.firstdata.com/en_us/all-features/spendtrend-holiday-2016.html",
+        image: "./images/spendtrend-holiday-2016.jpg"
     }
-]
+];
 
-function Projects(props) {
-    const projectList = (
-        <div className="App-projects">
-            {props.projects.map((project) =>
+
+let links = [
+    {endpoint: '/america'},
+    {endpoint: '/canada'},
+    {endpoint: '/norway'},
+    {endpoint: '/bahamas'}
+];
+
+class Navigation extends Component {
+
+    render() {
+        const listItems = projects.map((link) =>
+            <li key={link.title}>{link.title}</li>
+        );
+        return (
+            <div className="navigation">
+                <ul>
+                    {listItems}
+                </ul>
+            </div>
+        );
+    }
+
+}
+
+
+class Projects extends Component {
+    render() {
+        const projectList = projects.map((project) =>
+            <div key={project.title} className="App-projects">
                 <div className="App-col-left">
-                    <h1>{props.title}</h1>
-                    <p className="App-description">{props.description}</p>
+                    <h1>{project.title}</h1>
+                    <p className="App-description">{project.description}</p>
                     <h3>Tech used</h3>
-                    <p className="App-technology">{props.technology}</p>
+                    <p className="App-technology">{project.technology}</p>
                 </div>
-            )}
 
                 <div className="App-col-right">
-                <img src={props.image} alt={props.title} className="App-project-image"/>
+                    <img src={project.image} alt={project.title} className="App-project-image"/>
                 </div>
                 <div className="App-project-link">
-                <a href={props.link} className="App-project-link-button" target="_blank">Launch</a>
+                    <a href={project.link} className="App-project-link-button" target="_blank">Launch</a>
                 </div>
 
-        </div>
-    );
-    return (
-        {projectList}
-    )
+            </div>
+        );
+        return (
+            <div>
+            {projectList}
+            </div>
+        )
+    }
 }
+
 
 class App extends Component {
     render() {
@@ -80,33 +113,8 @@ class App extends Component {
                 </header>
                 <section className="App-body">
 
+                    <Projects/>
 
-                    <Projects
-                        title={projects.myProjects[0].title}
-                        description={projects.myProjects[0].description}
-                        technology={projects.myProjects[0].technology}
-                        link={projects.myProjects[0].link}
-                        image={connectedImage}
-
-                    />
-
-                    <Projects
-                        title={projects.myProjects[1].title}
-                        description={projects.myProjects[1].description}
-                        technology={projects.myProjects[1].technology}
-                        link={projects.myProjects[1].link}
-                        image={starImage}
-
-                    />
-
-                    <Projects
-                        title={projects.myProjects[2].title}
-                        description={projects.myProjects[2].description}
-                        technology={projects.myProjects[2].technology}
-                        link={projects.myProjects[2].link}
-                        image={spendTrend}
-
-                    />
 
                 </section>
             </div>

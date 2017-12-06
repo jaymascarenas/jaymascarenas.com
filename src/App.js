@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from './images/jay.png';
-import github from './images/GitHub-Mark-32px.png';
-import linkedIn from './images/In-2C-34px-R.png';
+import github from './images/GitHub-Mark-64px.png';
+import linkedIn from './images/In-2C-66px-R.png';
 import './App.css';
 
 const projects = require('./projects.js');
@@ -38,12 +38,14 @@ class Projects extends Component {
 
 class App extends Component {
     render() {
+        let  date = new Date();
+        let year = date.getFullYear();
         return (
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="Jay M"/>
                     <h1 className="App-title">Jay Mascarenas</h1>
-                    <p>Front End Web Developer</p>
+                    <h4>Web Developer</h4>
                     <div className="App-find-me">
                         <a href="https://www.github.com/jaymascarenas" target="_blank" rel="noopener noreferrer"><img
                             src={github} className="App-find-me-logos" alt="Github"/></a>
@@ -51,7 +53,7 @@ class App extends Component {
                            rel="noopener noreferrer"><img src={linkedIn} className="App-find-me-logos" alt="Linkedin"/></a>
                     </div>
                     <div className="App-intro">
-                        <p>Some of the work I have developed or designed.</p>
+                        <p>Below are some production links I have built and am proud of.</p>
                     </div>
                 </header>
                 <section className="App-body">
@@ -79,7 +81,7 @@ class App extends Component {
                                     <li>Node/Express</li>
                                     <li>Bootstrap/Foundation</li>
                                     <li>Photoshop</li>
-                                    <li>AJAX</li>
+                                    <li>AJAX/JSON</li>
                                     <li>APIs</li>
                                     <li>Trello</li>
                                 </ul>
@@ -87,6 +89,12 @@ class App extends Component {
                         </div>
                     </div>
                 </section>
+                <footer>
+                    <div className="footer">
+                        <p>&copy; {year} <a href="http://www.jaymascarenas.com">jaymascarenas.com</a>
+                        </p>
+                    </div>
+                </footer>
             </div>
         );
     }

@@ -22,7 +22,7 @@
 }
 
 .App-find-me-logos {
-    width: 32px;
+    width: 64px;
     margin: 10px 20px;
 }
 
@@ -130,6 +130,19 @@
     font-size: 1.2em;
     line-height: 1.8em;
     list-style: none;
+}
+
+footer .footer {
+    height: 32px;
+    padding: 10px 20px 20px;
+    background-color: #222222;
+    text-align: center;
+    color: #ffffff;
+}
+
+footer .footer a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 @media screen and (max-width: 1024px) {

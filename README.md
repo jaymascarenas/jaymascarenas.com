@@ -1,7 +1,7 @@
 # Jay Mascarenas — jaymascarenas.com
 
 Personal site: developer (15+ years), Director of Engineering, former coding bootcamp instructor,
-founder of [Black Rim Solutions](https://blackrimsolutions.com).
+founder of [Black Rim Solutions LLC](https://blackrimsolutions.com).
 Hosted on Cloudflare as an assets-only Worker (same setup as blackrimsolutions.com). No build step.
 
 ## Layout

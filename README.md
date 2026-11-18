@@ -10,7 +10,7 @@ Hosted on Cloudflare as an assets-only Worker (same setup as blackrimsolutions.c
   - `index.html`: the whole site (About, Experience, Now, Off the Clock, Connect)
   - `404.html`, `_headers` (security and cache headers), `robots.txt`, `sitemap.xml`
   - `css/styles.css`: theme tokens at the top
-  - `img/`: headshot, OG image, photo placeholders
+  - `img/`: headshot, adventure photos, OG image
 - `wrangler.jsonc`: Worker config and custom domains
 
 ## Develop
@@ -34,10 +34,13 @@ Redirect www → apex with a dashboard Redirect Rule (Rules → Redirect Rules �
 ## Updating
 
 - **Accent color:** change `--accent` at the top of `public/css/styles.css`. Also update the
-  `fill` in `public/favicon.svg` and the stroke in the `img/placeholder-*.svg` files if you want them to match.
+  `fill` in `public/favicon.svg` if you want it to match.
 - **Photos:** put files in `public/img/` and update the `src`, `alt`, `width`/`height` and caption in `index.html`:
-  - Headshot: square, 800×800 or larger (`.headshot`)
-  - Adventure photos: landscape 4:3, 1200×900 or larger (`.photos`)
+  - Headshot: square, 800×800 (`.headshot`)
+  - Adventure photos: landscape 4:3, 1600×1200 (`.photos`)
+  - Convert to WebP and strip metadata (removes phone GPS location), e.g.
+    `cwebp -q 80 -metadata none photo.png -o public/img/photo.webp`.
+    Note: iPhone photos can be stored sideways with a rotation flag, so check the result.
 - **Details:** search `index.html` for `TODO` to find spots for companies, years, favorite bands and shows.
 - Bump `?v=` on the stylesheet link when you change CSS, and update the year in the footers.
 

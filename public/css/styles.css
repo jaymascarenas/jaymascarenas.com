@@ -214,7 +214,7 @@ p { margin: 0 0 1em; }
 @media (min-width: 700px) { .photos { grid-template-columns: 1fr 1fr; } }
 .photos figure { margin: 0; }
 .photos img {
-  width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover;
   border-radius: var(--radius); border: 1px solid var(--line); background: var(--card);
 }
 .photos figcaption { color: var(--muted); font-size: 0.9rem; margin-top: 10px; }

@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Personal site for Jay Mascarenas. No Worker code: every request is served
+  // straight from public/ (free, no Worker invocations). Same setup as blackrimsolutions.com.
+  "name": "jaymascarenas",
+  "compatibility_date": "2026-11-01",
+
+  // DNS must be on Cloudflare; both hostnames attach to this Worker. www → apex is a Redirect Rule
+  // in the dashboard (Rules → Redirect Rules → "Redirect from WWW to root").
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "jaymascarenas.com", "custom_domain": true },
+    { "pattern": "www.jaymascarenas.com", "custom_domain": true }
+  ],
+
+  "assets": {
+    "directory": "public",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
